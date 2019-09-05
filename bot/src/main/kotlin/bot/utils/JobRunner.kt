@@ -40,6 +40,7 @@ object JobRunner {
 
             for (j in jobs) {
                 scheduler.scheduleJob(j.jobDetail, j.trigger)
+                println(j.trigger.nextFireTime)
             }
 
         } catch (e: SchedulerException) {
